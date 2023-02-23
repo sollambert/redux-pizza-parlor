@@ -13,9 +13,11 @@ function PizzaItem({pizza}) {
     const handleClick = () => {
         setAdded(!added);
 
-        if (dispatch({type: 'ADD_TO_CART' , payload: pizza})) {
-        } else dispatch({type: 'REMOVE_FROM_CART' , payload: pizza});
-        
+        if (added) {
+            dispatch({type: 'REMOVE_FROM_CART' , payload: pizza})
+        } else {
+            (dispatch({type: 'ADD_TO_CART' , payload: pizza}))
+        }
     }
 
 

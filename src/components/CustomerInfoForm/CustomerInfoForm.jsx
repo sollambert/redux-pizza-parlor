@@ -2,16 +2,18 @@ import "./CustomerInfoForm.css";
 
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-
 import { useHistory } from "react-router-dom";
 
 import Header from "../Header/Header";
 
 function CustomerInfoForm() {
   const dispatch = useDispatch();
-
-  // history
   const history = useHistory();
+
+  // go back to previous page
+  const goBack = () => {
+    history.push("/");
+  };
 
   const goToCheckout = () => {
     alert("Thanks for your order! Finalize your order on the next page.");
@@ -140,6 +142,9 @@ function CustomerInfoForm() {
         {displayIncompleteMessage && (
           <p>Oops! Fill out all fields to go to the next page.</p>
         )}
+        <button id="back-btn" onClick={goBack} type="submit">
+          BACK
+        </button>
       </form>
     </>
   );
