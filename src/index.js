@@ -16,6 +16,18 @@ const pizzas = (state = [], action) => {
     return state;
 }
 
+//! Checkout: Items in the cart 
+const cart = (state = [], action) => {
+switch (action.type) {
+  case 'ADD_TO_CART':
+    return [...state, action.payload];
+  case 'CLEAR_CART':
+    return {};
+  default:
+    return state;
+}
+};
+
 const store = createStore(
     combineReducers({
         pizzas

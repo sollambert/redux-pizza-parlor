@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
+import Checkout from '../Checkout/Checkout';
+
 import {useSelector, useDispatch} from 'react-redux';
 import {useEffect} from 'react';
 import axios from 'axios';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import PizzaList from '../PizzaList/PizzaList';
+
 
 function App() {
 
@@ -25,7 +28,6 @@ function App() {
   }
 
   return (
-    <>
       <div className='App'>
         <header className='App-header'>
           <h1 className='App-title'>Prime Pizza</h1>
@@ -39,17 +41,15 @@ function App() {
                 {/* CustomerForm component */}
               </Route>
               <Route exact path="/checkout">
-                {/* Checkout component */}
+                <Checkout />
               </Route>
               <Route exact path="/admin">
                 {/* Admin component */}
               </Route>
             </div>
           </Router>
-
         </header>
       </div>
-    </>
 
   );
 }
