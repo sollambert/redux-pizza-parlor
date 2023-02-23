@@ -2,13 +2,37 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./components/App/App";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// Import Redux
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const pizzas = (state = [], action) => {
+  switch (action.type) {
+    case "SET_PIZZAS":
+      return action.payload;
+  }
+  return state;
+};
+
+// reducer for customer cart
+const cart = (state = [], action) => {
+  switch (action.type) {
+    case "ADD_TO_CART":
+      return [...state, action.payload];
+    case "REMOVE_FROM_CART":
+      return state.filter((pizza) => {
+        if (pizza != action.payload) {
+          return pizza;
+        }
+      });
+    case "CLEAR_CART":
+      return {};
+    default:
+      return state;
+  }
+};
 
 // Reducer for customer info form
 const customer = (state = [], action) => {
@@ -18,9 +42,10 @@ const customer = (state = [], action) => {
   return state;
 };
 
-// The redux store store
-const storeInstance = createStore(
+const store = createStore(
   combineReducers({
+    pizzas,
+    cart,
     customer,
   }),
   applyMiddleware(logger)
@@ -28,7 +53,7 @@ const storeInstance = createStore(
 
 root.render(
   <React.StrictMode>
-    <Provider store={storeInstance}>
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>
