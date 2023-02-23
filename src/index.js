@@ -34,6 +34,18 @@ const cart = (state = [], action) => {
   }
 };
 
+const total = (state = 0, action) => {
+  switch (action.type) {
+    case "ADD_TO_CART":
+      console.log(action.payload.price)
+      return Math.round((state + Number(action.payload.price)) * 100)/100;
+    case "REMOVE_FROM_CART":
+      console.log(action.payload.price)
+      return Math.round((state - action.payload.price) * 100)/100;
+  }
+  return state;
+}
+
 // Reducer for customer info form
 const customer = (state = [], action) => {
   if (action.type === "SET_CUSTOMER") {
@@ -47,6 +59,7 @@ const store = createStore(
     pizzas,
     cart,
     customer,
+    total,
   }),
   applyMiddleware(logger)
 );
