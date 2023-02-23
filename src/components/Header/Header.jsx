@@ -3,8 +3,7 @@ import { useSelector } from "react-redux";
 import "./Header.css";
 
 function Header({ displayTotal }) {
-  const total = 5.99; //useSelector((store) => store.total);
-  console.log(displayTotal);
+  const total = useSelector((store) => store.total);
   return (
     <header id="app-header">
       <h1 id="app-title">Prime Pizza</h1>
