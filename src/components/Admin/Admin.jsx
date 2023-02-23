@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import OrderTable from './OrderTable/OrderTable';
 
@@ -7,8 +7,12 @@ function Admin() {
 
     const [orders, setOrders] = useState([]);
 
-    const getOrder = () => {
-        axios.get('/orders')
+    useEffect(() => {
+        getOrders()
+    }, [])
+
+    const getOrders = () => {
+        axios.get('/api/order')
             .then((response) => {
                 setOrders(response.data);
             })
