@@ -16,7 +16,7 @@ function PizzaList() {
 
   return (
     <>
-      <Header displayTotal={true} />
+      <Header headerText="Prime Pizza" displayTotal={true} />
       <div className="pizza-list">
         {pizzas.map((pizza) => {
           return <PizzaItem key={pizza.id} pizza={pizza} />;
