@@ -13,7 +13,7 @@ function OrderTable({orders}) {
             </thead>
             <tbody>
                 {orders.map((order) => {
-                    <OrderItem key={order.id} order={order}/>
+                    return <OrderItem key={order.id} order={order}/>
                 })}
             </tbody>
         </table>
