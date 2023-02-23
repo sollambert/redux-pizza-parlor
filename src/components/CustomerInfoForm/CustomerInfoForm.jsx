@@ -85,7 +85,7 @@ function CustomerInfoForm() {
 
   return (
     <>
-      <Header displayTotal={true} />
+      <Header  headerText="Prime Pizza" displayTotal={true} />
       <form id="customer-form" onSubmit={handleSubmit}>
         <h3>Step 2: Customer Information</h3>
         <div id="input-container">
