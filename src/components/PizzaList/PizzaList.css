@@ -2,4 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    color: black;
+    margin-top: 50px;
 }
