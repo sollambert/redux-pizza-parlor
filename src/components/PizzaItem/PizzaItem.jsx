@@ -2,10 +2,12 @@ import {useState} from 'react';
 import './PizzaItem.css';
 import { useDispatch } from 'react-redux';
 
+
 function PizzaItem({pizza}) {
 
     const [added, setAdded] = useState(false);
     const dispatch = useDispatch();
+    
 
     //handles click of add/remove button
     const handleClick = () => {
@@ -15,8 +17,8 @@ function PizzaItem({pizza}) {
     }
 
 
-
     return (
+        <>
         <div className='pizza-item'>
             <img className='pizza-img' src={pizza.image_path}/>
             <h1>{pizza.name}</h1>
@@ -24,6 +26,7 @@ function PizzaItem({pizza}) {
             <h3>{pizza.price}</h3>
             <button onClick={handleClick}>{added ? "Remove" : "Add"}</button>
         </div>
+        </>
     )
 
 }
