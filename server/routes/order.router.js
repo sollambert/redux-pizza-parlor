@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 // POST a new order
 router.post('/', async (req, res) => {
     const client = await pool.connect();
-    // console.log('req.body', req.body)
+    console.log('req.body', req.body)
     try {
         const {
             customer_name,
@@ -28,6 +28,14 @@ router.post('/', async (req, res) => {
             pizzas
         } = req.body;
         await client.query('BEGIN')
+        console.log('orderss!!!',
+        customer_name,
+        street_address,
+        city,
+        zip,
+        type,
+        total,
+        pizzas)
         const orderInsertResults = await client.query(`INSERT INTO "orders" ("customer_name", "street_address", "city", "zip", "type", "total")
         VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING id;`, [customer_name, street_address, city, zip, type, total]);
