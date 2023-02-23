@@ -8,9 +8,9 @@ function PizzaList() {
     const history = useHistory();
     const pizzas = useSelector(store => store.pizzas);
 
-    const goToCheckout = () => {
-        alert('You are going to checkout.');
-        history.push('/checkout');
+    const goToForm = () => {
+        alert('Thanks for your order! Fill out your information on the next page.');
+        history.push('/customerForm');
     }
 
     return (
@@ -20,7 +20,7 @@ function PizzaList() {
                 return <PizzaItem key={pizza.id} pizza={pizza}/>
             })}
         </div>
-        <button className="go-to-checkout-btn" onClick={goToCheckout} type="submit">Next</button>
+        <button className="go-to-form-btn" onClick={goToForm} type="submit">Next</button>
         </>
     )
 }
