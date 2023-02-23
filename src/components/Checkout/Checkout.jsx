@@ -61,6 +61,8 @@ function Checkout() {
         console.log('response', response);
         // console.log('success - pizzas added to database')
         // dispatch({ type: 'CLEAR_CART' });
+        // dispatch({ type: 'CLEAR_TOTAL' });
+        // dispatch({ type: 'CLEAR_CUSTOM' });
 
         //! Navigate back to pizza list
         history.push('/');
@@ -93,7 +95,7 @@ function Checkout() {
             </tr>
           </thead>
           <tbody>
-            {order.map((pizza, i) => {
+            {order && order.map((pizza, i) => {
               return (
                 <tr key={i}>
                   <td>{pizza.name}</td>

@@ -58,7 +58,7 @@ const cart = (state = [], action) => {
         }
       });
     case "CLEAR_CART":
-      return {};
+      return [];
     default:
       return state;
   }
@@ -72,6 +72,9 @@ const total = (state = 0, action) => {
     case "REMOVE_FROM_CART":
       console.log(action.payload.price)
       return Math.round((state - action.payload.price) * 100)/100;
+    case "CLEAR_TOTAL":
+      state = 0;
+      return;
   }
   return state;
 }
@@ -80,6 +83,10 @@ const total = (state = 0, action) => {
 const customer = (state = [], action) => {
   if (action.type === "SET_CUSTOMER") {
     return action.payload;
+  }
+  if (action.type === "CLEAR_CUSTOM") {
+    state = [];
+    return;
   }
   return state;
 };
