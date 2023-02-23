@@ -12,8 +12,10 @@ function PizzaItem({pizza}) {
     //handles click of add/remove button
     const handleClick = () => {
         setAdded(!added);
-        dispatch({type: 'ADD_TO_CART' , payload: pizza});
-        dispatch({type: 'REMOVE_FROM_CART' , payload: pizza});
+
+        if (dispatch({type: 'ADD_TO_CART' , payload: pizza})) {
+        } else dispatch({type: 'REMOVE_FROM_CART' , payload: pizza});
+        
     }
 
 
