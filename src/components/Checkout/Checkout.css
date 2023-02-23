@@ -1,0 +1,117 @@
+body {
+    font-size: 20px;
+  }
+
+/* Default styles */
+table {
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: darkgrey;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #e6e6e6;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  th:first-child {
+    width: 500px;
+  }
+  
+  th:last-child {
+    width: 50px;
+  }
+  
+  /* Styles for small screens */
+  @media (max-width: 480px) {
+    th:first-child {
+      width: 250px;
+    }
+    
+    th:last-child {
+      width: 25px;
+    }
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    padding: 15px; /* add more padding to create more space between the text and the borders */
+  }
+
+  h2 {
+    text-align: left;
+    margin-left: 15px;
+  }
+
+  .customer-info {
+    text-align: left;
+    margin-top: 10px; /* add some margin to create space below the previous element */
+    margin-left: 15px;
+    margin-bottom: 40px;
+}
+
+.order-type {
+    text-align: right;
+    margin-right: 15px;
+}
+
+.customer-info p {
+    margin: 0; /* remove the margin around the paragraphs */
+    line-height: 1.2; /* set the line-height to 1.2 */
+  }
+
+  h3 {
+    font-size: 35px;
+    text-align: right;
+    margin-right: 25px;
+    margin-top: 20px; /* add some margin to create space between the table and the heading */
+  }
+  
+  button {
+    background-color: lightblue;
+    font-size: 20px;
+    padding: 15px 30px; /* increase the padding to make the button larger */
+    margin-right: 25px;
+    float: right;
+    margin-bottom: 25px;
+  }
+
+  
+  /* Styles for medium screens */
+  @media (min-width: 481px) and (max-width: 768px) {
+    th:first-child {
+      width: 350px;
+    }
+    
+    th:last-child {
+      width: 40px;
+    }
+  }
+  
+  /* Styles for large screens */
+  @media (min-width: 769px) {
+    th:first-child {
+      width: 40em;
+    }
+    
+    th:last-child {
+      width: 15em;
+    }
+  }
+  
