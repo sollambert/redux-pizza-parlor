@@ -88,14 +88,16 @@ table {
     margin-top: 20px; /* add some margin to create space between the table and the heading */
   }
   
+  /*
   button {
     background-color: lightblue;
     font-size: 20px;
-    padding: 15px 30px; /* increase the padding to make the button larger */
+    padding: 15px 30px;
     margin-right: 25px;
     float: right;
     margin-bottom: 25px;
   }
+  */
 
   
   /* Styles for medium screens */
