@@ -11,6 +11,10 @@ function Checkout() {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const goBack = () => {
+    history.push('/customerForm');
+  }
+
   const [order, setOrders] = useState({
     customer_name: "Xai",
     street_address: "1111 lee ave",
@@ -88,11 +92,14 @@ function Checkout() {
           </tbody>
         </table>
 
+
         <h3>Total: {order.total}</h3>
 
         <button onClick={handleCheckout}>CHECKOUT</button>
+        <button id="back-btn" onClick={goBack} type="submit">BACK</button>
       </div>
     </>
+
   );
 }
 
