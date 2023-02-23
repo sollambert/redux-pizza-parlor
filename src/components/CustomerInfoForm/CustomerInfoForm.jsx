@@ -2,9 +2,16 @@ import "./CustomerInfoForm.css";
 
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function CustomerInfoForm() {
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  // go back to previous page
+  const goBack = () => {
+    history.push('/');
+  }
 
   // customer info object
   const [customerInfo, setCustomerInfo] = useState("");
@@ -125,6 +132,7 @@ function CustomerInfoForm() {
       {displayIncompleteMessage && (
         <p>Oops! Fill out all fields to go to the next page.</p>
       )}
+      <button id="back-btn" onClick={goBack} type="submit">BACK</button>
     </form>
   );
 }
