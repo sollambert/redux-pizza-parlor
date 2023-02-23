@@ -21,7 +21,9 @@ else {
     pool = new pg.Pool({
         host: 'localhost',
         port: 5432,
-        database: 'pizza_parlor', 
+        database: 'pizza_parlor',
+        //password: 'password',
+        //user: 'postgres'
     });
 }
 
