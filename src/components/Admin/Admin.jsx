@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, } from 'react';
+import Header from '../Header/Header';
 import OrderTable from './OrderTable/OrderTable';
 
 function Admin() {
@@ -18,9 +19,7 @@ function Admin() {
 
     return (
         <>
-            <header className='App-header'>
-                <h1 className='App-title'>Prime Pizza Orders</h1>
-            </header>
+            <Header headerText="Prime Pizza Orders"/>
             <OrderTable orders={orders}/>
         </>
     )

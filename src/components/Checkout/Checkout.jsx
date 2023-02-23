@@ -60,7 +60,7 @@ function Checkout() {
 
   return (
     <>
-      <Header />
+      <Header  headerText="Prime Pizza" />
       <div>
         <h2>Step 3: Checkout</h2>
         <div className="order-type">
