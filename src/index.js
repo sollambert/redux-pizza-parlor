@@ -8,36 +8,6 @@ import logger from "redux-logger";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-//! initial state for checkout
-//* order  = customer's name, street, city, zip
-// const orderInitialState = {
-//     cartItems: [
-//         {
-//             name: 'Tomato Soup',
-//             description:
-//               "If you like pizza, but you hate the toppings, the cheese, and the crust, you'll love this!",
-//             price: 12.99,
-//             image_path: 'images/pizza_photo.png',
-//             quantity: 1
-//           },
-//           {
-//             name: 'Tomato Soup',
-//             description:
-//               "If you like pizza, but you hate the toppings, the cheese, and the crust, you'll love this!",
-//             price: 12.99,
-//             image_path: 'images/pizza_photo.png',
-//             quantity: 
-//           }
-//     ],
-//     // order: 
-//     customer_name: 'Xai',
-//     street_address: '1111 lee ave',
-//     city: 'Brooklyn Center',
-//     zip: 22222,
-//     type: 'Pick up',
-//     total: 22.22, 
-// }
-
 const pizzas = (state = [], action) => {
   switch (action.type) {
     case "SET_PIZZAS":
@@ -74,7 +44,7 @@ const total = (state = 0, action) => {
       return Math.round((state - action.payload.price) * 100)/100;
     case "CLEAR_TOTAL":
       state = 0;
-      return;
+      return state;
   }
   return state;
 }
@@ -86,7 +56,7 @@ const customer = (state = [], action) => {
   }
   if (action.type === "CLEAR_CUSTOM") {
     state = [];
-    return;
+    return state;
   }
   return state;
 };
