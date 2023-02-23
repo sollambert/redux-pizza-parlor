@@ -14,8 +14,10 @@ function PizzaItem({pizza}) {
         setAdded(!added);
 
         if (added) {
-            (dispatch({type: 'ADD_TO_CART' , payload: pizza})) 
-        } else dispatch({type: 'REMOVE_FROM_CART' , payload: pizza});  
+            dispatch({type: 'REMOVE_FROM_CART' , payload: pizza})
+        } else {
+            (dispatch({type: 'ADD_TO_CART' , payload: pizza}))
+        }
     }
 
 
