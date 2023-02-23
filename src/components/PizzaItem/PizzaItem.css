@@ -1,0 +1,13 @@
+.pizza-item {
+    width: 250px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    border-radius: 1em;
+    background-color: #f3f3f3;
+    padding: 1em;
+}
+
+.pizza-img {
+    width: 250px;
+}
