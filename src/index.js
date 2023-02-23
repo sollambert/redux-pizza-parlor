@@ -24,11 +24,13 @@ const cart = (state = [], action) => {
             return state.filter((pizza) => {
                 if (pizza != action.payload) {
                     return pizza
-                }
-            });
+                }});
+        case 'CLEAR_CART':
+            return {};
+        default:
+            return state;
+            };
     }
-    return state;
-}
 
 const store = createStore(
     combineReducers({
