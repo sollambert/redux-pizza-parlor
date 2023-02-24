@@ -1,7 +1,17 @@
 .pizza-list {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid; 
+    grid-row-start: auto; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
     color: black;
-    margin-top: 50px;
+    margin: 50px 50px 50px 50px;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.go-to-form-btn {
+    width: 60px;
+    height: 60px;
+    justify-self:last baseline;
+    align-self:last baseline;
 }

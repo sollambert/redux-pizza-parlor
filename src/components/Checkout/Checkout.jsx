@@ -33,6 +33,7 @@ function Checkout() {
 
         //! Navigate back to pizza list
         history.push('/');
+        // sweet alert here "Thank you for your order!"
       })
       .catch((error) => {
         console.log('error in adding product to database');

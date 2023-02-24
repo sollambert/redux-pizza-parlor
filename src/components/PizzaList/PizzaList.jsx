@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import PizzaItem from "../PizzaItem/PizzaItem";
+import Button from '@mui/material/Button';
 import { useHistory } from "react-router-dom";
 import "./PizzaList.css";
 
@@ -21,10 +22,14 @@ function PizzaList() {
         {pizzas.map((pizza) => {
           return <PizzaItem key={pizza.id} pizza={pizza} />;
         })}
-      </div>
-      <button className="go-to-form-btn" onClick={goToForm} type="submit">
-        Next
-      </button>
+      
+      <Button 
+      className="go-to-form-btn" 
+      onClick={goToForm} 
+      type="submit"
+      variant="outlined">
+        Next </Button>
+    </div>
     </>
   );
 }
