@@ -22,7 +22,7 @@ The pizza ordering system is a web-based application that allows users to order 
 ---
 
 ## Installation
-1. $ git clone ghttps://github.com/sollambert/redux-pizza-parlor
+1. $ git clone https://github.com/sollambert/redux-pizza-parlor
 1. `npm install`
 1. `npm run server` in your terminal
 1. `npm run client` in another terminal. This should open up a new browser tab.
