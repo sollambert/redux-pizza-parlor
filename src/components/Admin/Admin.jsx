@@ -21,6 +21,7 @@ function Admin() {
             })
     }
 
+    // console.log(orders);
     return (
         <>
             <Header headerText="Prime Pizza Orders"/>
