@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import {Table, TableBody, TableRow, TableCell, TableHead} from '@mui/material'
 
 
 function OrderItem({ order }) {
@@ -31,15 +32,15 @@ function OrderItem({ order }) {
     // console.log(order)
     return (
         <>
-            <tr onClick={displayDetails}>
-                <td>{order.customer_name}</td>
-                <td>{new Date(order.time).toLocaleString()}</td>
-                <td>{order.type}</td>
-                <td>{order.total}</td>
-            </tr>
+            <TableRow onClick={displayDetails}>
+                <TableCell>{order.customer_name}</TableCell>
+                <TableCell>{new Date(order.time).toLocaleString()}</TableCell>
+                <TableCell>{order.type}</TableCell>
+                <TableCell>{order.total}</TableCell>
+            </TableRow>
             {details ?
-                <tr>
-                    <td >
+                <TableRow>
+                    <TableCell >
                         <ul>
                             {pizzaIds.map((id, index) => {
                                 return <li key={index}>
@@ -51,11 +52,11 @@ function OrderItem({ order }) {
                                 </li>
                             })}
                         </ul>
-                    </td>
-                    <td colSpan='3'>
+                    </TableCell>
+                    <TableCell colSpan='3'>
                             {`${order.street_address}, ${order.city}, ${order.zip}`}
-                    </td>
-                </tr>
+                    </TableCell>
+                </TableRow>
                 : ''}
         </>
     )
