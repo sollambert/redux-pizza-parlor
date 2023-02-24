@@ -1,20 +1,22 @@
-body {
-    font-size: 20px;
+.checkout {
+  display: grid;
 
-  }
+}
 
-/* Default styles */
-table {
-    margin: 0 auto;
-    border: 1px solid black;
-    border-collapse: collapse;
-    color: black
-  }
-  
-  th {
-    background-color: darkgrey;
-  }
-  
+#back-btn {
+  display: inline-block;
+  justify-self:last baseline;
+  align-self:last baseline;
+
+}
+
+#checkout-btn {
+  display: inline-block;
+  justify-self:last baseline;
+  align-self:last baseline;
+}
+
+
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
@@ -22,21 +24,7 @@ table {
   tr:nth-child(odd) {
     background-color: #e6e6e6;
   }
-  
-  th,
-  td {
-    text-align: left;
-    border: 1px solid black;
-    padding: 5px;
-  }
-  
-  th:first-child {
-    width: 500px;
-  }
-  
-  th:last-child {
-    width: 50px;
-  }
+ 
   
   /* Styles for small screens */
   @media (max-width: 480px) {
@@ -49,12 +37,6 @@ table {
     }
   }
 
-  table,
-  th,
-  td {
-    border: 1px solid black;
-    padding: 15px; /* add more padding to create more space between the text and the borders */
-  }
 
   h2 {
     text-align: left;
@@ -87,17 +69,6 @@ table {
     margin-right: 25px;
     margin-top: 20px; /* add some margin to create space between the table and the heading */
   }
-  
-  /*
-  button {
-    background-color: lightblue;
-    font-size: 20px;
-    padding: 15px 30px;
-    margin-right: 25px;
-    float: right;
-    margin-bottom: 25px;
-  }
-  */
 
   
   /* Styles for medium screens */
