@@ -4,10 +4,13 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../Header/Header";
+import Swal from 'sweetalert2';
+import withReactContent from "sweetalert2-react-content";
 
 function CustomerInfoForm() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const swal = withReactContent(Swal)
 
   // go back to previous page
   const goBack = () => {
@@ -15,8 +18,15 @@ function CustomerInfoForm() {
   };
 
   const goToCheckout = () => {
-    alert("Thanks for your order! Finalize your order on the next page.");
-    history.push("/checkout");
+    swal.fire({
+      title: "Only one more step! Let's go look at your order and checkout!",
+      imageUrl: 'images/penguin_dancing.gif',
+      imageHeight: "200px",
+      imageWidth: "300px"
+    })
+      .then(() => {
+        history.push("/checkout");
+      })
   };
 
   // customer info object
@@ -84,7 +94,7 @@ function CustomerInfoForm() {
 
   return (
     <>
-      <Header  headerText="Prime Pizza" displayTotal={true} />
+      <Header headerText="Prime Pizza" displayTotal={true} />
       <form id="customer-form" onSubmit={handleSubmit}>
         <h3>Step 2: Customer Information</h3>
         <div id="input-container">
