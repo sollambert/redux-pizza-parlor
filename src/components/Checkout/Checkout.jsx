@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import './Checkout.css';
 import Swal from 'sweetalert2';
 import withReactContent from "sweetalert2-react-content";
+import { Table, TableBody, TableCell, TableHead, TableRow, Paper, Button } from '@mui/material';
 
 function Checkout() {
   const order = useSelector((state) => state.cart);
@@ -13,6 +14,10 @@ function Checkout() {
   const dispatch = useDispatch();
   const history = useHistory();
   const swal = withReactContent(Swal)
+
+  const goBack = () => {
+    history.push("/customerForm");
+  };
 
   //! when checkout btn is clicked
   const handleCheckout = () => {
@@ -64,30 +69,36 @@ function Checkout() {
           <p>{customer.city}</p>
           <p>{customer.zip}</p>
         </div>
+        <div className="checkout">
+          <Table sx={{ maxWidth: 550 }} aria-label="simple table" align="center">
+            <TableHead>
+              <TableRow>
+                <TableCell align="left" color="primary">Pizza Name</TableCell>
+                <TableCell align="right">Cost</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {order && order.map((pizza, i) => (
+                <TableRow key={i}>
+                  <TableCell component="th" scope="row">
+                    {pizza.name}
+                  </TableCell>
+                  <TableCell align="right">{pizza.price}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            {order &&
-              order.map((pizza, i) => {
-                return (
-                  <tr key={i}>
-                    <td>{pizza.name}</td>
-                    <td>{pizza.price}</td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
+
+        <Button id="back-btn" variant="outlined" onClick={goBack}>BACK</Button>
+        <Button id="checkout-btn" variant="outlined" onClick={handleCheckout}>CHECKOUT</Button>
+
 
         <h3>Total: {total}</h3>
 
-        <button onClick={handleCheckout}>CHECKOUT</button>
+        
+        </div>
+
       </div>
     </>
   );
