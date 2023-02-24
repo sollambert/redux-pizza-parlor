@@ -9,7 +9,6 @@ import {
   FormControlLabel,
   Button,
   ButtonGroup,
-  TextField,
 } from "@mui/material";
 import Header from "../Header/Header";
 import InputField from "./InputField/InputField";
@@ -67,7 +66,7 @@ function CustomerInfoForm() {
     <>
       <Header headerText="Prime Pizza" displayTotal={true} />
       <form id="customer-form" onSubmit={handleSubmit}>
-        <h3>Step 2: Customer Information</h3>
+        <h4>Step 2: Customer Information</h4>
         <div id="input-container">
           <InputField
             setCustomerInfo={setCustomerInfo}
@@ -94,6 +93,7 @@ function CustomerInfoForm() {
             type={"Zip Code"}
           />
         </div>
+
         <RadioGroup onChange={handleTypeChange}>
           <FormControlLabel value="pickup" control={<Radio />} label="Pickup" />
           <FormControlLabel
@@ -102,7 +102,7 @@ function CustomerInfoForm() {
             label="Delivery"
           />
         </RadioGroup>
-        <ButtonGroup>
+        <ButtonGroup id="button-group">
           <Button id="back-btn" onClick={goBack}>
             BACK
           </Button>

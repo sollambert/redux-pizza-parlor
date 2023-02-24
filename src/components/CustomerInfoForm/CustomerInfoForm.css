@@ -1,5 +1,6 @@
 #customer-form {
-  margin: 25px 300px;
+  width: 60%;
+  margin: auto;
   display: grid;
 
   grid-template-columns: 1fr 100px;
@@ -14,6 +15,6 @@
   grid-column: 1 / 2;
 }
 
-#next-btn {
+#button-group {
   grid-column: 2/3;
 }
