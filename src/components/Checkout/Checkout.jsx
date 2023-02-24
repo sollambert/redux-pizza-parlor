@@ -1,11 +1,19 @@
-import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import Header from '../Header/Header';
-import './Checkout.css';
-import Swal from 'sweetalert2';
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import Header from "../Header/Header";
+import "./Checkout.css";
+import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { Table, TableBody, TableCell, TableHead, TableRow, Paper, Button } from '@mui/material';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Paper,
+  Button,
+} from "@mui/material";
 
 function Checkout() {
   const order = useSelector((state) => state.cart);
@@ -13,7 +21,7 @@ function Checkout() {
   const total = useSelector((state) => state.total);
   const dispatch = useDispatch();
   const history = useHistory();
-  const swal = withReactContent(Swal)
+  const swal = withReactContent(Swal);
 
   const goBack = () => {
     history.push("/customerForm");
@@ -33,25 +41,26 @@ function Checkout() {
       }),
     };
     axios
-      .post('/api/order', postOrders)
+      .post("/api/order", postOrders)
       .then((response) => {
-        dispatch({ type: 'CLEAR_CART' });
-        dispatch({ type: 'CLEAR_TOTAL' });
-        dispatch({ type: 'CLEAR_CUSTOM' });
+        dispatch({ type: "CLEAR_CART" });
+        dispatch({ type: "CLEAR_TOTAL" });
+        dispatch({ type: "CLEAR_CUSTOM" });
 
         //! Navigate back to pizza list
-        swal.fire({
-          title: "Congratulations! We are making your order now!",
-          imageUrl: 'images/pizza_penguin.webp',
-          imageHeight: "350px",
-          imageWidth: "200px"
-        })
-          .then(() => {
-            history.push('/');
+        swal
+          .fire({
+            title: "Congratulations! We are making your order now!",
+            imageUrl: "images/pizza_penguin.webp",
+            imageHeight: "350px",
+            imageWidth: "200px",
           })
+          .then(() => {
+            history.push("/");
+          });
       })
       .catch((error) => {
-        console.log('error in adding product to database');
+        console.log("error in adding product to database");
       });
   };
 
@@ -70,33 +79,41 @@ function Checkout() {
           <p>{customer.zip}</p>
         </div>
         <div className="checkout">
-          <Table sx={{ maxWidth: 550 }} aria-label="simple table" align="center">
+          <Table
+            sx={{ maxWidth: 550 }}
+            aria-label="simple table"
+            align="center"
+          >
             <TableHead>
               <TableRow>
-                <TableCell align="left" color="primary">Pizza Name</TableCell>
+                <TableCell align="left" color="primary">
+                  Pizza Name
+                </TableCell>
                 <TableCell align="right">Cost</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {order && order.map((pizza, i) => (
-                <TableRow key={i}>
-                  <TableCell component="th" scope="row">
-                    {pizza.name}
-                  </TableCell>
-                  <TableCell align="right">{pizza.price}</TableCell>
-                </TableRow>
-              ))}
+              {order &&
+                order.map((pizza, i) => (
+                  <TableRow key={i}>
+                    <TableCell component="th" scope="row">
+                      {pizza.name}
+                    </TableCell>
+                    <TableCell align="right">{pizza.price}</TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
 
-        <Button id="back-btn" variant="outlined" onClick={goBack}>BACK</Button>
-        <Button id="checkout-btn" variant="outlined" onClick={handleCheckout}>CHECKOUT</Button>
+          <Button id="back-btn" onClick={goBack}>
+            BACK
+          </Button>
+          <Button id="checkout-btn" onClick={handleCheckout}>
+            CHECKOUT
+          </Button>
 
-        <h3>Total: {total}</h3>
-
-        
+          <h3>Total: {total}</h3>
         </div>
-
       </div>
     </>
   );

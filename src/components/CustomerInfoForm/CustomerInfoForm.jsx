@@ -117,10 +117,15 @@ function CustomerInfoForm() {
           />
         </RadioGroup>
         <ButtonGroup id="button-group">
-          <Button id="back-btn" onClick={goBack}>
+          <Button id="back-btn" onClick={goBack} variant="contained">
             BACK
           </Button>
-          <Button id="next-btn" type="submit" color="secondary">
+          <Button
+            id="next-btn"
+            type="submit"
+            color="secondary"
+            variant="contained"
+          >
             NEXT
           </Button>
         </ButtonGroup>
