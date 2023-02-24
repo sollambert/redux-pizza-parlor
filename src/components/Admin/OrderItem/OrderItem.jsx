@@ -28,7 +28,7 @@ function OrderItem({ order }) {
         setDetails(!details);
     }
 
-    console.log(order)
+    // console.log(order)
     return (
         <>
             <tr onClick={displayDetails}>
