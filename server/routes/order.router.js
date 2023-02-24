@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
     });
 })
 
+router.get('/:id', (req, res) => {
+    pool.query(`SELECT * FROM "line_item"
+    WHERE "order_id" = $1`, [req.params.id])
+    .then((dbRes) => {
+        res.send(dbRes.rows);
+    })
+    .catch((err) => {
+        console.error(err)
+        res.sendStatus(500);
+    })
+})
+
 // POST a new order
 router.post('/', async (req, res) => {
     const client = await pool.connect();
