@@ -15,8 +15,20 @@ The pizza ordering system is a web-based application that allows users to order 
 1. [Acknowledgement](#acknowledgement)
 
 ---
-## Screen shot 
-![screenshot of app](./public/images/screenshot.png)
+## Screen shots 
+Home page
+![home page](./public/images/home.png)
+
+Customer Information page
+![customer info page](./public/images/customer-order.png)
+
+Checkout page
+![checkout page](./public/images/checkout.png)
+
+Admin page
+![Admin page](./public/images/admin.png)
+
+---
 
 ## Installation
 1. $ git clone ghttps://github.com/sollambert/redux-pizza-parlor
