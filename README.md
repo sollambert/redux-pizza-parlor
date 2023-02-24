@@ -8,25 +8,16 @@ The pizza ordering system is a web-based application that allows users to order 
 
 ---
 ## **TABLE OF CONTENT:**
-1. [Screenshot of App](#screen-shot)
+1. [App Demo](#app-demo)
 1. [Installation](#installation)
 1. [Usage](#usage)
 1. [Technologies utilization](#technologies-utilization)
 1. [Acknowledgement](#acknowledgement)
 
 ---
-## Screen shots 
-Home page
-![home page](./public/images/home.png)
+## App Demo
+![demo](./public/images/pizza-demo.gif)
 
-Customer Information page
-![customer info page](./public/images/customer-order.png)
-
-Checkout page
-![checkout page](./public/images/checkout.png)
-
-Admin page
-![Admin page](./public/images/admin.png)
 
 ---
 
