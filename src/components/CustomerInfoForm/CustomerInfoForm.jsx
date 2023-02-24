@@ -12,13 +12,16 @@ import {
 } from "@mui/material";
 import Header from "../Header/Header";
 import InputField from "./InputField/InputField";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
+// import { useTheme } from "@mui/material/styles";
+
 function CustomerInfoForm() {
+  // const theme = useTheme();
   const dispatch = useDispatch();
   const history = useHistory();
-  const swal = withReactContent(Swal)
+  const swal = withReactContent(Swal);
 
   // go back to previous page
   const goBack = () => {
@@ -26,15 +29,16 @@ function CustomerInfoForm() {
   };
 
   const goToCheckout = () => {
-    swal.fire({
-      title: "Only one more step! Let's go look at your order and checkout!",
-      imageUrl: 'images/penguin_dancing.gif',
-      imageHeight: "200px",
-      imageWidth: "300px"
-    })
+    swal
+      .fire({
+        title: "Only one more step! Let's go look at your order and checkout!",
+        imageUrl: "images/penguin_dancing.gif",
+        imageHeight: "200px",
+        imageWidth: "300px",
+      })
       .then(() => {
         history.push("/checkout");
-      })
+      });
   };
 
   // customer info object
@@ -116,7 +120,7 @@ function CustomerInfoForm() {
           <Button id="back-btn" onClick={goBack}>
             BACK
           </Button>
-          <Button id="next-btn" type="submit">
+          <Button id="next-btn" type="submit" color="secondary">
             NEXT
           </Button>
         </ButtonGroup>

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Checkout from "../Checkout/Checkout";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
