@@ -7,7 +7,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
-    "@mui/material": "^5.11.10",
+    "@mui/material": "^5.10.17",
     "axios": "^0.21.1",
     "pg": "^8.2.1",
     "react": "^18.2.0",

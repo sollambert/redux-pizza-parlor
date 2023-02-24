@@ -12,14 +12,14 @@ const theme = createTheme({
     },
   },
   // this part is not working; updates
-  //   components: {
-  //     MuiButton: {
-  //       defaultProps: {
-  //         variant: "contained",
-  //         disableRipple: true,
-  //       },
-  //     },
-  //   },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: "contained",
+        disableRipple: true,
+      },
+    },
+  },
 });
 
 export default theme;
