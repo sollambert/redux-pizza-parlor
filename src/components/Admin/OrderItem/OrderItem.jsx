@@ -39,7 +39,7 @@ function OrderItem({ order }) {
             </tr>
             {details ?
             <tr>
-                <td>
+                <td colspan='4'>
                     <ul>
                         {pizzaIds.map((id, index) => {
                             return <li key={index}>
