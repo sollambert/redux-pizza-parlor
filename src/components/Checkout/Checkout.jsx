@@ -41,7 +41,7 @@ function Checkout() {
 
   return (
     <>
-      <Header  headerText="Prime Pizza" />
+      <Header headerText="Prime Pizza" />
       <div>
         <h2>Step 3: Checkout</h2>
         <div className="order-type">
@@ -62,14 +62,15 @@ function Checkout() {
             </tr>
           </thead>
           <tbody>
-            {order && order.map((pizza, i) => {
-              return (
-                <tr key={i}>
-                  <td>{pizza.name}</td>
-                  <td>{pizza.price}</td>
-                </tr>
-              );
-            })}
+            {order &&
+              order.map((pizza, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{pizza.name}</td>
+                    <td>{pizza.price}</td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
 
