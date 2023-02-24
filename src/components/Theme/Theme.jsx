@@ -19,6 +19,12 @@ const theme = createTheme({
         disableRipple: true,
       },
     },
+    MuiButtonGroup: {
+      defaultProps: {
+        variant: "contained",
+        disableRipple: true,
+      },
+    },
   },
 });
 

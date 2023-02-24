@@ -3,7 +3,7 @@
   margin: auto;
   display: grid;
 
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr 140px;
 
   grid-template-areas: "left right";
 }
