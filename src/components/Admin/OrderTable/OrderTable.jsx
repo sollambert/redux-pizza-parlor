@@ -1,22 +1,23 @@
 import OrderItem from '../OrderItem/OrderItem'
+import {Table, TableBody, TableRow, TableCell, TableHead} from '@mui/material'
 
-function OrderTable({orders}) {
+function OrderTable({orders, getOrders}) {
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Time Order Placed</th>
-                    <th>Type</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-            <tbody>
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableCell>Name</TableCell>
+                    <TableCell>Time Order Placed</TableCell>
+                    <TableCell>Type</TableCell>
+                    <TableCell>Cost</TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
                 {orders.map((order) => {
-                    return <OrderItem key={order.id} order={order}/>
+                    return <OrderItem key={order.id} order={order} getOrders={getOrders}/>
                 })}
-            </tbody>
-        </table>
+            </TableBody>
+        </Table>
     )
 }
 
