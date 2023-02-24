@@ -6,6 +6,9 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
+import theme from "./components/Theme/Theme";
+import { ThemeProvider } from "@mui/material";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const pizzas = (state = [], action) => {
@@ -37,17 +40,17 @@ const cart = (state = [], action) => {
 const total = (state = 0, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      console.log(action.payload.price)
-      return Math.round((state + Number(action.payload.price)) * 100)/100;
+      console.log(action.payload.price);
+      return Math.round((state + Number(action.payload.price)) * 100) / 100;
     case "REMOVE_FROM_CART":
-      console.log(action.payload.price)
-      return Math.round((state - action.payload.price) * 100)/100;
+      console.log(action.payload.price);
+      return Math.round((state - action.payload.price) * 100) / 100;
     case "CLEAR_TOTAL":
       state = 0;
       return state;
   }
   return state;
-}
+};
 
 // Reducer for customer info form
 const customer = (state = [], action) => {
@@ -74,7 +77,9 @@ const store = createStore(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );
