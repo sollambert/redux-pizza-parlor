@@ -12,10 +12,13 @@ import {
 } from "@mui/material";
 import Header from "../Header/Header";
 import InputField from "./InputField/InputField";
+import Swal from 'sweetalert2';
+import withReactContent from "sweetalert2-react-content";
 
 function CustomerInfoForm() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const swal = withReactContent(Swal)
 
   // go back to previous page
   const goBack = () => {
@@ -23,8 +26,15 @@ function CustomerInfoForm() {
   };
 
   const goToCheckout = () => {
-    alert("Thanks for your order! Finalize your order on the next page.");
-    history.push("/checkout");
+    swal.fire({
+      title: "Only one more step! Let's go look at your order and checkout!",
+      imageUrl: 'images/penguin_dancing.gif',
+      imageHeight: "200px",
+      imageWidth: "300px"
+    })
+      .then(() => {
+        history.push("/checkout");
+      })
   };
 
   // customer info object
