@@ -73,14 +73,15 @@ function Checkout() {
             </tr>
           </thead>
           <tbody>
-            {order && order.map((pizza, i) => {
-              return (
-                <tr key={i}>
-                  <td>{pizza.name}</td>
-                  <td>{pizza.price}</td>
-                </tr>
-              );
-            })}
+            {order &&
+              order.map((pizza, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{pizza.name}</td>
+                    <td>{pizza.price}</td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
 
