@@ -25,7 +25,7 @@ function Admin() {
     return (
         <>
             <Header headerText="Prime Pizza Orders"/>
-            <OrderTable orders={orders}/>
+            <OrderTable orders={orders} getOrders={getOrders}/>
         </>
     )
 }

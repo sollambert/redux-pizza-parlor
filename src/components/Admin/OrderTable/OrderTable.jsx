@@ -1,7 +1,7 @@
 import OrderItem from '../OrderItem/OrderItem'
 import {Table, TableBody, TableRow, TableCell, TableHead} from '@mui/material'
 
-function OrderTable({orders}) {
+function OrderTable({orders, getOrders}) {
     return (
         <Table>
             <TableHead>
@@ -14,7 +14,7 @@ function OrderTable({orders}) {
             </TableHead>
             <TableBody>
                 {orders.map((order) => {
-                    return <OrderItem key={order.id} order={order}/>
+                    return <OrderItem key={order.id} order={order} getOrders={getOrders}/>
                 })}
             </TableBody>
         </Table>

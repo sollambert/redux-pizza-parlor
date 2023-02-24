@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import {Table, TableBody, TableRow, TableCell, TableHead} from '@mui/material'
+import {Button, TableRow, TableCell, TableHead} from '@mui/material'
 
 
-function OrderItem({ order }) {
+function OrderItem({ order, getOrders }) {
 
     const pizzas = useSelector(store => store.pizzas);
     const [details, setDetails] = useState(false);
@@ -13,6 +13,20 @@ function OrderItem({ order }) {
     useEffect(() => {
         getOrder();
     }, [])
+
+    const deleteOrder = () => {
+        axios.delete(`/api/order/${order.id}`)
+        .then((response) => {
+            getOrders();
+        })
+        .catch((err) => {
+            console.error(err);
+        })
+    }
+
+    const handleDelete = () => {
+        deleteOrder();
+    }
 
     const getOrder = () => {
         axios.get(`/api/order/${order.id}`)
@@ -53,8 +67,11 @@ function OrderItem({ order }) {
                             })}
                         </ul>
                     </TableCell>
-                    <TableCell colSpan='3'>
+                    <TableCell colSpan='2'>
                             {`${order.street_address}, ${order.city}, ${order.zip}`}
+                    </TableCell>
+                    <TableCell >
+                            <Button onClick={handleDelete}>Remove</Button>
                     </TableCell>
                 </TableRow>
                 : ''}
